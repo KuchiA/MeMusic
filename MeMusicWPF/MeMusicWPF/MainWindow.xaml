@@ -1,12 +1,38 @@
-﻿<Window x:Class="MeMusicWPF.MainWindow"
+﻿<Window x:Name="LogInWindow" x:Class="MeMusicWPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MeMusicWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FF401171">
+        Title="MainWindow" Height="500" Width="900" MinWidth="800" MinHeight="400" VerticalAlignment="Center" HorizontalAlignment="Center">
+    <Grid x:Name="LoginGrid" MinWidth="800" MinHeight="400">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF44085B" Offset="1.2"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border x:Name="OuterBorder" Margin="100,51,100,33" Width="480" Height="320">
+            <Grid x:Name="OuterGrid" HorizontalAlignment="Center" Width="470" VerticalAlignment="Center" Height="330">
+                <Border x:Name="InnerBorder" BorderBrush="White" BorderThickness="2,2,2,2" CornerRadius="10" HorizontalAlignment="Center" Height="250" VerticalAlignment="Center" Width="464">
+                    <Grid x:Name="InnerGrid">
+                        <TextBox x:Name="TypeUsername" Style="{StaticResource RoundedTextBox}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Top" Height="22" Width="300" Margin="0,63,0,0" BorderBrush="Transparent" Text="&#xD;&#xA;" TextChanged="TypeUsername_TextChanged" FontSize="14"/>
+                        <TextBox x:Name="TypePassword" Style="{StaticResource RoundedTextBox}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Top" Height="22" Width="300" Margin="0,136,0,0" BorderBrush="Transparent" FontSize="14"/>
+                        <Label Content="Username" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top" Width="92" Foreground="White" HorizontalContentAlignment="Center" Height="24"/>
+                        <Label Content="Password" HorizontalAlignment="Center" VerticalAlignment="Center" Width="92" Foreground="White" HorizontalContentAlignment="Center"/>
+                        <Button x:Name="SignInButton" Content="Sign In" Style="{StaticResource RoundedButton}" HorizontalAlignment="Left" Margin="330,216,0,0" VerticalAlignment="Top" Width="120" Background="White" BorderBrush="Transparent" Height="20" />
+                        <Button x:Name="SignUpButton" Content="Sign Up" Style="{StaticResource RoundedButton}" HorizontalAlignment="Left" Margin="10,216,0,0" VerticalAlignment="Top" Width="120" Background="White" BorderBrush="Transparent" Height="20"/>
+                    </Grid>
+                </Border>
+                <Label Content="Login to MeMusic" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Foreground="White" FontSize="20" HorizontalContentAlignment="Center"/>
+            </Grid>
+        </Border>
+
+
+
+
+
 
     </Grid>
 </Window>
